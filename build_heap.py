@@ -41,10 +41,10 @@ def main():
         data = list(map(int, input().split()))
     elif "F" in text:
         fails = input()
-        #if "a" in fails:
-            #print("wrong file name")
-            #return
-        with open("./test/" + fails, "r").read() as f:
+        if "a" in fails:
+            print("wrong file name")
+            return
+        with open("./test/" + fails, "r") as f:
             n=int(f.readline())
             data = list(map(int, f.readline().split()))
     
