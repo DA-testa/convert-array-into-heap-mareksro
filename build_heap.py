@@ -8,7 +8,7 @@ def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-    for i in range(n // 2 -1,-1,-1):
+    for i in range(n // 2,-1,-1):
         heapify(data,i, swaps)
 
     return swaps
@@ -41,9 +41,9 @@ def main():
         data = list(map(int, input().split()))
     elif "F" in text:
         fails = input()
-        if "a" in fails:
-            print("wrong file name")
-            return
+        #if "a" in fails:
+            #print("wrong file name")
+            #return
         with open("./test/" + input(), "r").read() as f:
             n=int(f.readline())
             data = list(map(int, f.readline().split()))
