@@ -20,7 +20,7 @@ def heapify(data,i, swaps):
     min = i
     if kreisais < n and data[kreisais]<data[min]:
         min = kreisais
-    if labais < n and data[kreisais]<data[min]:
+    if labais < n and data[labais]<data[min]:
         min = labais
     if  i != min:
         data[i], data[min] = data[min], data[i]
@@ -39,7 +39,7 @@ def main():
     # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
-    if "F" in text:
+    elif "F" in text:
         fails = input()
         if "a" in fails:
             print("wrong file name")
