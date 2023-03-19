@@ -62,7 +62,8 @@ def main():
 
                 assert len(data) == n
     else:
-         return
+        print()
+        return
 
     # checks if lenght of data is the same as the said lenght
     #if len(data) != n:
