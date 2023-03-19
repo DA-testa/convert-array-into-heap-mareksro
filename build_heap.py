@@ -45,7 +45,7 @@ def main():
         try:
             n = int(input())
             data = list(map(int, input().split()))
-            assert len(data) == n
+            
         except:
             print()
             return
@@ -58,7 +58,7 @@ def main():
             with open("./test/" + fails, "r") as f:
                 n=int(f.readline())
                 data = list(map(int, f.readline().split()))
-                assert len(data) == n
+                
         #except FileNotFoundError:
             #print("not found")
            # return
@@ -69,7 +69,7 @@ def main():
             print("error")
             return
 
-   
+    assert len(data) == n
     # checks if lenght of data is the same as the said lenght
     if len(data) != n:
         print("invalid data")
