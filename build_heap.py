@@ -58,7 +58,8 @@ def main():
                 n=int(fails.readline().strip())
                 data=fails.readline()
                 data = list(map(int, data.split()))
-                
+    else:
+         return 
 
     assert len(data) == n
     # checks if lenght of data is the same as the said lenght
