@@ -9,11 +9,11 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     for i in range(n // 2,-1,-1):
-        heapo(data,i, swaps)
+        heapify(data,i, swaps)
 
     return swaps
 
-def heapo(data,i, swaps):
+def heapify(data,i, swaps):
     n=len(data)
     kreisais = 2*i +1
     labais = 2*i+2
@@ -25,8 +25,9 @@ def heapo(data,i, swaps):
     if  i != min:
         data[i], data[min] = data[min], data[i]
         swaps.append((i,min))
-        heapo(data,min,swaps)
-   
+        heapify(data,min,swaps)
+    else:
+        return
 
 def main():
     
@@ -41,23 +42,24 @@ def main():
        # return
     if "I" in text:
     # input from keyboard
-            n = int(input())
-            data=input()
-            data = list(map(int, data.split()))
-            assert len(data) == n
-    if "F" in text:
+        n = int(input())
+        data=input()
+        data = list(map(int, data.split()))
+        assert len(data) == n
+    elif "F" in text:
         fails = input()
-
         if "a" in fails:
             print("wrong file name")
             return
-        with open(f"./test/{fails}" , "r") as fails:
-                n=int(fails.readline().strip())
-                data=fails.readline()
-                data = list(map(int, data.split()))
+        with open(f"./test/{fails}" , "r") as f:
+            n=int(f.readline().strip())
+            data=f.readline()
+            data = list(map(int, data.split()))
            # checks if lenght of data is the same as the said lenght
-        assert len(data) == n
-    
+            assert len(data) == n
+    else:
+        print("invalid input")
+        return
                 
 
     #if len(data) != n:
@@ -69,8 +71,8 @@ def main():
     swaps = build_heap(data)
 
     if len(swaps) > 4 * len(data):
-       print ("out of bound")
-       return
+        print ("out of bound")
+        return
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
 
