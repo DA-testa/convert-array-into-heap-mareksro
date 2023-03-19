@@ -60,9 +60,7 @@ def main():
                 n=int(f.readline().strip())
                 data=f.readline()
                 data = list(map(int, data.split()))
-                
-        
-
+            
     assert len(data) == n
     # checks if lenght of data is the same as the said lenght
     #if len(data) != n:
@@ -73,9 +71,8 @@ def main():
     # and give back all swaps
     swaps = build_heap(data)
 
-    if len(swaps) > 4 * len(data):
-        print ("out of bound")
-        return
+    if len(swaps) <= 4 * len(data):
+        assert len(swaps)
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
 
