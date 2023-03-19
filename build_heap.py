@@ -36,6 +36,10 @@ def main():
     # first two tests are from keyboard, third test is from a file
 
     text = input()
+
+    if text not in ["I", "F"]:
+        print("invalid input")
+        return
     if "I" in text:
     # input from keyboard
         n = int(input())
@@ -53,13 +57,17 @@ def main():
     else:
         return
     # checks if lenght of data is the same as the said lenght
-    assert len(data) == n
-
+    if len(data) != n:
+        print("invalid data")
+        return
     # calls function to assess the data 
 
     # and give back all swaps
     swaps = build_heap(data)
 
+    if len(swaps) > 4 * len(data):
+        print ("out of bound")
+        return
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
 
