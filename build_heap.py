@@ -44,20 +44,22 @@ def main():
     # input from keyboard
         try:
             n = int(input())
-            data = list(map(int, input().split()))
+            data=input()
+            data = list(map(int, data.split()))
             
         except:
             print()
             return
-    elif "F" in text:
+    if "F" in text:
         fails = input()
 
         if "a" in fails:
             print("wrong file name")
             return
-        with open("test/" + fails, "r") as f:
+        with open("./test/" + fails, "r") as f:
                 n=int(f.readline())
-                data = list(map(int, f.readline().split()))
+                data=f.readline()
+                data = list(map(int, data.split()))
                 assert len(data) == n
     else:
         print()
