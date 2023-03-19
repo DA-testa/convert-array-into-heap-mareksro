@@ -42,9 +42,13 @@ def main():
        # return
     if "I" in text:
     # input from keyboard
-        n = int(input())
-        data = list(map(int, input().split()))
-        assert len(data) == n
+        try:
+            n = int(input())
+            data = list(map(int, input().split()))
+            assert len(data) == n
+        except:
+            print()
+            return
     elif "F" in text:
         fails = input()
         #if "a" in fails:
@@ -54,11 +58,16 @@ def main():
             with open("./test/" + fails, "r") as f:
                 n=int(f.readline())
                 data = list(map(int, f.readline().split()))
-        #except FileNotFoundError:
-            #print("not found")
-            #return
+                assert len(data) == n
+        except FileNotFoundError:
+            print("not found")
+            return
         except:
             print("invaild format")
+            return
+        else:
+            print()
+            return
 
    
     # checks if lenght of data is the same as the said lenght
