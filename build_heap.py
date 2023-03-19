@@ -64,11 +64,11 @@ def main():
         return
         
 
-    
+    assert len(data) == n
     # checks if lenght of data is the same as the said lenght
-    if len(data) != n:
-        print("invalid data")
-        return
+    #if len(data) != n:
+        #print("invalid data")
+        #return
     # calls function to assess the data 
 
     # and give back all swaps
