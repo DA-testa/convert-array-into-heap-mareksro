@@ -60,7 +60,6 @@ def main():
                 data = list(map(int, f.readline().split()))
                 assert len(data) == n
     except FileNotFoundError:
-            print("not found")
             return
     except:
             print("invaild format")
