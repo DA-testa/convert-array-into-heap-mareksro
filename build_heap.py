@@ -54,9 +54,9 @@ def main():
             with open("./test/" + fails, "r") as f:
                 n=int(f.readline())
                 data = list(map(int, f.readline().split()))
-        except FileNotFoundError:
-            print("not found")
-            return
+        #except FileNotFoundError:
+            #print("not found")
+            #return
         except:
             print("invaild format")
 
