@@ -47,15 +47,20 @@ def main():
         assert len(data) == n
     elif "F" in text:
         fails = input()
-        if "a" in fails:
-            print("wrong file name")
+        #if "a" in fails:
+            #print("wrong file name")
+            #return
+        try:
+            with open("./test/" + fails, "r") as f:
+                n=int(f.readline())
+                data = list(map(int, f.readline().split()))
+        except FileNotFoundError:
+            print("not found")
             return
-        with open("./test/" + fails, "r") as f:
-            n=int(f.readline())
-            data = list(map(int, f.readline().split()))
-    
-    else:
-        return
+        except:
+            print("invaild format")
+
+   
     # checks if lenght of data is the same as the said lenght
     if len(data) != n:
         print("invalid data")
