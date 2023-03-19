@@ -8,26 +8,29 @@ def build_heap(data):
     swaps = []
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
-    for i in range(n // 2,-1,-1):
-        heapify(data,i, swaps)
+    for i in range(n // 2-1,-1,-1):
+        swaps+=heapify(data,i, n)
 
     return swaps
 
-def heapify(data,i, swaps):
-    n=len(data)
-    kreisais = 2*i +1
-    labais = 2*i+2
-    min = i
-    if kreisais < n and data[kreisais]<data[min]:
-        min = kreisais
-    if labais < n and data[labais]<data[min]:
-        min = labais
-    if  i != min:
-        data[i], data[min] = data[min], data[i]
-        swaps.append((i,min))
-        heapify(data,min,swaps)
+def heapify(data,i, n):
+    swaps=[]
+    while True:
+        kreisais = i*2 +1
+        labais = i*2+2
+        min = i
+        if kreisais < n and data[kreisais]<data[min]:
+            min = kreisais
+        if labais < n and data[labais]<data[min]:
+            min = labais
+        if  i != min:
+            data[i], data[min] = data[min], data[i]
+            swaps.append((i,min))
+            i =min
+        else:
+            return
 
-
+        return swaps
 
 def main():
     
