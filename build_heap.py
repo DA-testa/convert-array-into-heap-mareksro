@@ -28,6 +28,7 @@ def heapify(data,i, swaps):
         heapify(data,min,swaps)
 
 
+
 def main():
     
     # TODO : add input and corresponding checks
@@ -39,6 +40,7 @@ def main():
     # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
+        assert len(data) == n
     elif "F" in text:
         fails = input()
         if "a" in fails:
@@ -48,11 +50,13 @@ def main():
             n=int(f.readline())
             data = list(map(int, f.readline().split()))
     
-
+    else:
+        return
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
     # calls function to assess the data 
+
     # and give back all swaps
     swaps = build_heap(data)
 
