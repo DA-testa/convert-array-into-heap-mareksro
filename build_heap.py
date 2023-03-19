@@ -57,7 +57,7 @@ def main():
             print("wrong file name")
             return
         with open("./test/" + fails, "r") as f:
-                n=int(f.readline())
+                n=int(f.readline().strip())
                 data=f.readline()
                 data = list(map(int, data.split()))
                 assert len(data) == n
