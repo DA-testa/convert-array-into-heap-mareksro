@@ -70,7 +70,7 @@ def main():
 
     if len(swaps) > 4 * len(data):
        print ("out of bound")
-    return
+       return
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
 
