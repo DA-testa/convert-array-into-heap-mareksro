@@ -9,11 +9,11 @@ def build_heap(data):
     # TODO: Creat heap and heap sort
     # try to achieve  O(n) and not O(n2)
     for i in range(n // 2,-1,-1):
-        heapify(data,i, swaps)
+        heapo(data,i, swaps)
 
     return swaps
 
-def heapify(data,i, swaps):
+def heapo(data,i, swaps):
     n=len(data)
     kreisais = 2*i +1
     labais = 2*i+2
@@ -25,11 +25,8 @@ def heapify(data,i, swaps):
     if  i != min:
         data[i], data[min] = data[min], data[i]
         swaps.append((i,min))
-        heapify(data,min,swaps)
-    else:
-         return
-
-    return swaps
+        heapo(data,min,swaps)
+   
 
 def main():
     
@@ -54,9 +51,9 @@ def main():
         if "a" in fails:
             print("wrong file name")
             return
-        with open("./test/" + fails, "r") as fails:
-                n=int(fails.readline().strip())
-                data=fails.readline()
+        with open("./test/{fails}" , "r") as f:
+                n=int(f.readline().strip())
+                data=f.readline()
                 data = list(map(int, data.split()))
     
 
