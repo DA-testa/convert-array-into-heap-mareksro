@@ -37,9 +37,9 @@ def main():
 
     text = input()
 
-    if text not in ["I", "F"]:
-        print("invalid input")
-        return
+    #if text not in ["I", "F"]:
+       # print("invalid input")
+       # return
     if "I" in text:
     # input from keyboard
         n = int(input())
