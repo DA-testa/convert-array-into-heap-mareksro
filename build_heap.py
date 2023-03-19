@@ -62,7 +62,7 @@ def main():
     except FileNotFoundError:
             return
     except:
-            print("invaild format")
+            #print("invaild format")
             return
         
 
