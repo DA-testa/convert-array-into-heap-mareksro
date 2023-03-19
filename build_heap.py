@@ -46,17 +46,17 @@ def main():
         data=input()
         data = list(map(int, data.split()))
         assert len(data) == n
-    elif "F" in text:
-        fails = input()
-        if "a" in fails:
-            print("wrong file name")
-            return
-        with open(f"./test/{fails}" , "r") as f:
-            n=int(f.readline().strip())
-            data=f.readline()
-            data = list(map(int, data.split()))
+    #elif "F" in text:
+        #fails = input()
+        #if "a" in fails:
+            #print("wrong file name")
+            #return
+        #with open(f"./test/{fails}" , "r") as f:
+            #n=int(f.readline().strip())
+            #data=f.readline()
+            #data = list(map(int, data.split()))
            # checks if lenght of data is the same as the said lenght
-            assert len(data) == n
+            #assert len(data) == n
     else:
         print("invalid input")
         return
