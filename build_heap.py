@@ -51,7 +51,7 @@ def main():
         if "a" in fails:
             print("wrong file name")
             return
-        with open("./test/{fails}" , "r") as f:
+        with open("./test/"+fails , "r") as f:
                 n=int(f.readline().strip())
                 data=f.readline()
                 data = list(map(int, data.split()))
