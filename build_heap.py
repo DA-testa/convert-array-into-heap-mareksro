@@ -43,7 +43,7 @@ def main():
     # input from keyboard
             n = int(input())
             data=input()
-            data = list(map(int, data.split()))
+            data = list(map(int, data.split(" ")))
             assert len(data) == n
     if "F" in text:
         fails = input()
@@ -54,10 +54,9 @@ def main():
         with open(f"./test/{fails}" , "r") as fails:
                 n=int(fails.readline().strip())
                 data=fails.readline()
-                data = list(map(int, data.split()))
+                data = list(map(int, data.split(" ")))
                 assert len(data) == n
-    else:
-         return
+    
                 
 
     # checks if lenght of data is the same as the said lenght
