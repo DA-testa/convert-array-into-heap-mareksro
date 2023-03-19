@@ -3,7 +3,7 @@
 from heapq import heapify
 
 
-def build_heap(data):
+def build_heap(data, i, swaps):
     n=len(data)
     swaps = []
     # TODO: Creat heap and heap sort
@@ -11,10 +11,7 @@ def build_heap(data):
     for i in range(n // 2,-1,-1):
         heapify(data,i, swaps)
 
-    return swaps
-
-def heapify(data,i, swaps):
-    n=len(data)
+    
     kreisais = 2*i +1
     labais = 2*i+2
     min = i
@@ -26,7 +23,7 @@ def heapify(data,i, swaps):
         data[i], data[min] = data[min], data[i]
         swaps.append((i,min))
         heapify(data,min,swaps)
-
+    return swaps
 
 
 def main():
