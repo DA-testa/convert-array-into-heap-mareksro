@@ -55,7 +55,7 @@ def main():
                 n=int(fails.readline().strip())
                 data=fails.readline()
                 data = list(map(int, data.split(" ")))
-                assert len(data) == n
+        assert len(data) == n
     
                 
 
