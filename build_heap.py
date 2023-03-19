@@ -51,22 +51,22 @@ def main():
             return
     elif "F" in text:
         fails = input()
-        #if "a" in fails:
+        if "a" in fails:
             #print("wrong file name")
             #return
-        try:
+    
             with open("./test/" + fails, "r") as f:
                 n=int(f.readline())
                 data = list(map(int, f.readline().split()))
                 assert len(data) == n
-        except FileNotFoundError:
+        #except FileNotFoundError:
             #print("not found")
-            return
-        except:
-            print("invaild format")
-            return
+           # return
+        #except:
+            #print("invaild format")
+            #return
         else:
-            print()
+            print("error")
             return
 
    
