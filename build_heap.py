@@ -60,10 +60,7 @@ def main():
                 n=int(f.readline().strip())
                 data=f.readline()
                 data = list(map(int, data.split()))
-                assert len(data) == n
-    else:
-        print()
-        return
+                
         
 
     assert len(data) == n
