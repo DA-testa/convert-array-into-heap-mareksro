@@ -43,7 +43,7 @@ def main():
     # input from keyboard
             n = int(input())
             data=input()
-            data = list(map(int, data.split(" ")))
+            data = list(map(int, data.split()))
             assert len(data) == n
     if "F" in text:
         fails = input()
@@ -54,12 +54,12 @@ def main():
         with open(f"./test/{fails}" , "r") as fails:
                 n=int(fails.readline().strip())
                 data=fails.readline()
-                data = list(map(int, data.split(" ")))
+                data = list(map(int, data.split()))
+           # checks if lenght of data is the same as the said lenght
         assert len(data) == n
     
                 
 
-    # checks if lenght of data is the same as the said lenght
     #if len(data) != n:
        # print("invalid data")
         #return
@@ -68,9 +68,9 @@ def main():
     # and give back all swaps
     swaps = build_heap(data)
 
-    #if len(swaps) > 4 * len(data):
-       # print ("out of bound")
-        #return
+    if len(swaps) > 4 * len(data):
+       print ("out of bound")
+    return
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
 
