@@ -42,14 +42,11 @@ def main():
        # return
     if "I" in text:
     # input from keyboard
-        try:
+        
             n = int(input())
             data=input()
             data = list(map(int, data.split()))
-            
-        except:
-            print()
-            return
+        
     if "F" in text:
         fails = input()
 
@@ -62,7 +59,7 @@ def main():
                 data = list(map(int, data.split()))
                 
 
-    assert len(data) == n
+    
     # checks if lenght of data is the same as the said lenght
     #if len(data) != n:
         #print("invalid data")
