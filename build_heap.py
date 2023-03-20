@@ -51,15 +51,15 @@ def main():
         if "a" in fails:
             print("wrong file name")
             return
-        with open(fails , "r") as f:
+        with open(f"tests/{fails}") as f:
             n=int(f.readline().strip())
             data=f.readline()
             data = list(map(int, data.split()))
            # checks if lenght of data is the same as the said lenght
             assert len(data) == n
     else:
-        print("invalid input")
-        return
+        print("invalid input", text)
+        exit()
                 
 
     #if len(data) != n:
@@ -71,7 +71,7 @@ def main():
     swaps = build_heap(data)
 
     if len(swaps) > 4 * len(data):
-        print ("out of bound")
+        print (4*len(data))
         return
     # TODO: output how many swaps were made, 
     # this number should be less than 4n (less than 4*len(data))
