@@ -58,7 +58,7 @@ def main():
            # checks if lenght of data is the same as the said lenght
             #assert len(data) == n
     else:
-        print("invalid input")
+        #print("invalid input")
         return
                 
 
