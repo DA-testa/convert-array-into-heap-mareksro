@@ -57,9 +57,9 @@ def main():
             #data = list(map(int, data.split()))
            # checks if lenght of data is the same as the said lenght
             #assert len(data) == n
-    else:
+    #else:
         #print("invalid input")
-        return
+        #return
                 
 
     #if len(data) != n:
